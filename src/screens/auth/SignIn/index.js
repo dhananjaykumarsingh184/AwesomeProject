@@ -10,7 +10,7 @@ import { GoogleLogin } from "../../../components/GoogleLogin";
 
 const SignIn = () => {
    const onSignUp=() =>{
-      console.log("onSignUp press")
+      console.log("onSignUp press link")
    }
 return(
  <View style={styles.container}>
