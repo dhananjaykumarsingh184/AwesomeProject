@@ -12,21 +12,22 @@ borderWidth:1,
 
 },
 image:{
-    width:300,
+    width:250,
     height:200,
     alignContent:'center',
 },
 titleContainer:{
-marginVertical:54,
+marginVertical:20,
 },
 title:{
     fontSize:40,
     fontWeight:'bold',
-    textAlign:'center'
+    textAlign:'center',
+    color:colors.black,
 },
 innerTitle:{
     color:colors.orange,
-    textDecorationLine:'underLine',
+    textDecorationLine:'underline',
 },
 footerText:{
     fontSize:18,

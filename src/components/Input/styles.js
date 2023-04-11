@@ -14,17 +14,21 @@ label:{
 inputContainer:{
     borderWidth:1,
     width:303,
-    height:60,
+    height:40,
     borderRadius:14,
     marginTop:5,
     borderColor:colors.grey,
     flexDirection:'row',
-    alignItems:'center'
+    alignItems:'center',
+    alignSelf:'center',
 },
 input:{
     paddingHorizontal:16,
-    paddingVertical:20,
+    //paddingVertical:20,
     flex:1,
+    alignContent:'center',
+    alignSelf:'center',
+   // textAlign:'center',
 },
 image:{
     width:24,

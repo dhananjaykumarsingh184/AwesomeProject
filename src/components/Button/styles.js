@@ -8,7 +8,8 @@ container:{
     padding:8,
     borderRadius:8,
     marginTop:8,
-    width:'100%',
+    width:'97%',
+    paddingHorizontal:16,
     
 },
 
