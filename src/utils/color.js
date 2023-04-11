@@ -9,6 +9,9 @@ export const colors={
     olive:'#808000',
     greenyellow :'#ADFF2F',
     yellowgreen:'#9ACD32',
-
+    textgrey:'#606060',
+    lightgrey:'#DADADA',
+    borderColor:'#F0F0F0',
+   
 }
 
