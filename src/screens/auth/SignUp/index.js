@@ -12,7 +12,7 @@ import SignIn from "../SignIn";
 const SignUp = ({navigation}) => {
    const [checked,setChecked] = useState(false); 
    const onSignIn=() =>{
-    navigation.navigate(SignIn)
+ //   navigation.navigate(SignIn)
    }
    const onBack = () => {
       navigation.goBack()

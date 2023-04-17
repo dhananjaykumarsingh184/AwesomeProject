@@ -36,4 +36,5 @@ footerText:{
     marginTop:8,
     color:colors.blue,
     },
+
 })

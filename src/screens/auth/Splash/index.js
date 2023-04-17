@@ -25,7 +25,7 @@ return(
         <Text style={[styles.title, styles.innerTitle]}>All your need</Text>
         <Text style={styles.title}>Here!</Text>
     </View>
-    <Button  onPress={onSignup} title="Sign Up" />
+    <Button style={styles.buttonCon} onPress={onSignup} title="Sign Up" />
     <Pressable hitSlop={10} onPress={signIn}>
         <Text style={styles.footerText}>Sign In</Text>
     </Pressable>

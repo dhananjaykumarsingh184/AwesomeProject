@@ -14,6 +14,9 @@ import Home  from './src/screens/app/Home';
 import Profile from './src/screens/app/Profile';
 import Favorites  from './src/screens/app/Favorites';
 import ProductDetails from './src/screens/app/ProductDetails';
+import Settings from './src/screens/app/Settings';
+import CreateListing from './src/screens/app/CreateListing';
+import MyListings from './src/screens/app/MyListings';
 //import Tabs from './src/components/Tabs';
 const WEB_CLIENT_ID = '362364812355-6qko0854gtb14bfjjc6lc3m87hf4gv4o.apps.googleusercontent.com'
 const ANDROID_CLIENT_ID = '362364812355-9s6cok36732nsbfpua6if4q1b6vgp7dj.apps.googleusercontent.com'
@@ -22,48 +25,62 @@ const IOS_CLIENT_ID = '362364812355-5q4id74rr3d1t6g4ceoo38s182rjt1lo.apps.google
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const Tabs= () => {
-  return(
-  <Tab.Navigator 
-  screenOptions={({ route }) => ({
-    tabBarIcon: ({ focused, color, size }) => {
-      let icon;
-
-      if (route.name === 'Home') {
-        icon = focused
-          ? require('./src/assets/tabs/home_active.png')
-          : require('./src/assets/tabs/home.png');
-      } else if (route.name === 'Profile') {
-        icon = focused 
-        ?  require('./src/assets/tabs/profile_active.png')
-        : require('./src/assets/tabs/profile.png');
-      }
-      else if (route.name === 'Favorites') {
-        icon = focused 
-        ?  require('./src/assets/tabs/bookmark_active.png')
-        : require('./src/assets/tabs/bookmark.png');
-      }
-
-      // You can return any component that you like here!
-      return <Image style={{width:24,height:24}} source={icon} />;
-    },
-    headerShown: false,
-    tabBarShowLabel:false,
-    tabBarStyle:{borderTopColor:colors.grey}
-  })}
-
- 
->
-       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Favorites" component={Favorites} />
-      <Tab.Screen name="Profile" component={Profile} />
-    </Tab.Navigator>
+const ProfileStack=()=>{
+  return (
+    <Stack.Navigator>
+       <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}}/>
+       <Stack.Screen name="Settings" component={Settings} options={{headerShown: false}}/>
+       <Stack.Screen name="CreateListing" component={CreateListing} options={{headerShown: false}}/>
+       <Stack.Screen name="MyListings" component={MyListings} options={{headerShown: false}}/>
+     </Stack.Navigator>
   )
+}
+const Tabs= () => {
+   return(
+      <Tab.Navigator 
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+              let icon;
+
+              if (route.name === 'Home') {
+                icon = focused
+                  ? require('./src/assets/tabs/home_active.png')
+                  : require('./src/assets/tabs/home.png');
+              } else if (route.name === 'ProfileStack') {
+                icon = focused 
+                ?  require('./src/assets/tabs/profile_active.png')
+                : require('./src/assets/tabs/profile.png');
+              }
+              else if (route.name === 'Favorites') {
+                icon = focused 
+                ?  require('./src/assets/tabs/bookmark_active.png')
+                : require('./src/assets/tabs/bookmark.png');
+              }
+
+              // You can return any component that you like here!
+              return <Image style={{width:24,height:24}} source={icon} />;
+            },
+            headerShown: false,
+            tabBarShowLabel:false,
+            tabBarStyle:{borderTopColor:colors.grey}
+          })}
+
+    
+      >
+          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Favorites" component={Favorites} />
+          <Tab.Screen name="ProfileStack" component={ProfileStack} />
+        </Tab.Navigator>
+    )
 }
 
 
 const App = () => {
-  const isSignedIn=true;
+  //Sign In Enable
+  const f=false;
+  const t=true;
+  const isSignedIn= f ;
+  
 
   useEffect(() => {
     GoogleSignin.configure({

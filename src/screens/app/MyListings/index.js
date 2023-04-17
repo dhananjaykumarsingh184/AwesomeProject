@@ -6,20 +6,24 @@ import  {Header}  from '../../../components/Header';
 import  {products}  from '../../../data/products';
 import  {FavoriteItem}  from '../../../components/FavoriteItem';
 import ProductDetails from '../ProductDetails';
- const Favorites =({navigation}) => {
+ const MyListings =({navigation}) => {
+    const onBack = () => {
+        navigation.goBack();
+    }
+
     const renderItem = ({item}) => {
         const onProductPress=() =>{
             navigation.navigate('ProductDetails',{product:item})
         }
         return (
-            <FavoriteItem  onPress={onProductPress}  {...item}
+            <FavoriteItem  imageClose={require('../../../assets/Vectordeletedustbin.png')} onPress={onProductPress}  {...item}
             />
         )
     }
         return (
             <SafeAreaView>
                 <View style={styles.container}>
-                <Header style={styles.head}  title="Favorites"/>
+                <Header showBack onBackPress={onBack} style={styles.head}  title="My Listings"/>
                 <FlatList 
                         showsHorizontalScrollIndicator={false}
                         vertical 
@@ -36,4 +40,4 @@ import ProductDetails from '../ProductDetails';
         )
  }
 
- export default Favorites;
+ export default MyListings;
