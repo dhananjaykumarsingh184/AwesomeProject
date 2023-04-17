@@ -3,7 +3,7 @@ import { Image, Pressable, Text, View } from "react-native";
 import { styles } from "./styles";
 
 
-export const FavoriteItem = ({title,price,image,onPress}) => {
+export const FavoriteItem = ({title,imageClose,price,image,onPress}) => {
 
     return (
         <Pressable onPress={onPress} style={styles.container}>
@@ -12,7 +12,7 @@ export const FavoriteItem = ({title,price,image,onPress}) => {
                 <Text style={styles.title}>{title}</Text>
                 <Text style={styles.price}>{price}</Text>
             </View>
-            <Image style={styles.imageClose} source={require('../../assets/tabs/Shapeclose.png')} />
+            <Image style={styles.imageClose} source={imageClose || require('../../assets/tabs/Shapeclose.png')} />
       
         </Pressable>
     )

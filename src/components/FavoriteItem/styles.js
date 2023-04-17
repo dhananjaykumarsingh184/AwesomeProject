@@ -30,8 +30,7 @@ price : {
 }
 ,
 imageClose:{
-    width:24,
-    height:24,
+    
     marginLeft:8,
 
 }

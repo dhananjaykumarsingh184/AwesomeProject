@@ -1,6 +1,6 @@
 export const categories = [
 
-    {
+    {   
         title: 'All Test',
         image: 'https://w7.pngwing.com/pngs/457/519/png-transparent-star-white-stars-angle-white-triangle-thumbnail.png',
     },

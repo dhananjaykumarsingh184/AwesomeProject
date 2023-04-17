@@ -6,7 +6,7 @@ container:{
   flexDirection:'row',
   alignItems:'center',
   justifyContent:'space-between',
-  padding:5,
+  padding:16,
   
   
 },
